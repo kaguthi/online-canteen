@@ -17,12 +17,12 @@ function sendOtp($email, $otp){
     $mail->Host = 'smtp.gmail.com';
 
     $mail->SMTPAuth = true;
-    $mail->Username = 'ngugikaguathi453@gmail.com'; //your email address
-    $mail->Password = 'sqkfmzwliqpjwevx'; // your password
+    $mail->Username = ''; //your email address
+    $mail->Password = ''; // your password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
-    $mail->setFrom('ngugikaguathi453@gmail.com'); // your email address
+    $mail->setFrom(''); // your email address
     $mail->addAddress($email);
     $mail->isHTML(true);
 
