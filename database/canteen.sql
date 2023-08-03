@@ -181,7 +181,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `email`, `telephone`, `password`) VALUES
 (1, 'ngugi', 'jones', 'jones@gmail.com', 796452313, '1234'),
-(3, 'jones', 'reddington', 'peterkaguathi873@gmail.com', 712345678, '12345');
+(3, 'jones', 'reddington', 'petergmail.com', 712345678, '12345');
 
 --
 -- Indexes for dumped tables
