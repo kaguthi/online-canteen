@@ -8,10 +8,6 @@ function search($image, $price, $name){
             <div class="card-body">
                 <h6>Name: '.$name.'</h6>
                 <p>Price: '.$price.'</p>
-                <i class="bx bxs-star"></i>
-                <i class="bx bxs-star"></i>
-                <i class="bx bxs-star"></i>
-                <i class="bx bxs-star-half"></i>
                 <button class="btn btn-primary center mb-1">Add to cart</button>
             </div>
         </div>

@@ -16,7 +16,6 @@ include "config/database.php";
     .foot{
         top: 0;
     }
-    /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&display=swap'); */
 </style>
 <!-- body -->
 <html>
@@ -40,7 +39,6 @@ include "config/database.php";
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row results">
-                            <!-- <div class="result"> -->
                         <?php
                                 $fetch_data = "SELECT * FROM food";
                                 $fetch_data_run = mysqli_query($connect, $fetch_data);
@@ -65,19 +63,10 @@ include "config/database.php";
                                     </div>";
                                 }
                             ?>
-                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- footer
-        <div class="container-fluid foot bg-secondary">
-            <footer>
-                <center><p>@Copyright 2023 by Ngugi</p></center>
-            </footer>
-        </div> -->
     </body>
-    
 </html>

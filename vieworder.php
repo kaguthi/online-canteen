@@ -27,7 +27,7 @@ if(isset($_SESSION['userid'])){
                     </li>
                         <?php
                     }else{
-                        echo "<pclass='text-white'>login first</p>";
+                        echo "<p class='text-white'>login first</p>";
                     }
                         ?>
                 </ul>

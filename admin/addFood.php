@@ -86,15 +86,23 @@ include "sidebar.php";
     <script>
         <?php
             if(isset($_SESSION['msg'])){?>
-                alertify.set('notifier','position', 'top-right');
-                alertify.success('<?= $_SESSION['msg']?>');
+                iziToast.success({
+                            title: "Success",
+                            icon: "bi bi-check2-circle",
+                            message: "<?= $_SESSION['msg']?>",
+                            position: 'topRight'
+                        });
             <?php    
             unset($_SESSION['msg']);
             }
             if (isset($_SESSION['error'])){
             ?>
-                alertify.set('notifier','position', 'top-right');
-                alertify.error("<?= $_SESSION['error']?>"); 
+                iziToast.error({
+                                title: "Error",
+                                icon: 'bi bi-x-circle',
+                                message: "<?= $_SESSION['error']?>",
+                                position: "topRight"
+                            })
             <?php
             unset($_SESSION['error']);
             }

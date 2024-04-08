@@ -111,7 +111,6 @@ if(isset($_SESSION['userid'])){
         </div>
     </div>
 </div>
-    <!-- <button class="btn btn-primary">Buy now</button> -->
     <script>
         $(document).ready(function(){
             $(document).on('click', '.delete-btn', function(event){
@@ -124,12 +123,20 @@ if(isset($_SESSION['userid'])){
                     data: {product: id},
                     success:function(response){
                         if(response == 200){
-                            alertify.set('notifier','position', 'top-right');
-                            alertify.success('Item deleted successfully');
+                            iziToast.success({
+                                title: "Success",
+                                icon: "bi bi-check2-circle",
+                                message: "Item deleted successfully",
+                                position: "topRight"
+                            })
                             $('#mycart').load(location.href + " #mycart");
                         }else if(response){
-                            alertify.set('notifier','position', 'top-right');
-                            alertify.success('Something Went Wrong');
+                            iziToast.error({
+                                title: "Error",
+                                icon: 'bi bi-x-circle',
+                                message: "Something Went Wrong",
+                                position: "topRight"
+                            })
                         }
                     }
                 })

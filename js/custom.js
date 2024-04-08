@@ -22,17 +22,33 @@ $(document).ready(function(){
             data:{"id": id},
             success: function(response){
                 if(response == 401){
-                    alertify.set('notifier','position', 'top-right');
-                    alertify.success('Login first');
+                    iziToast.success({
+                        title: "Success",
+                        icon: "bi bi-check2-circle",
+                        message: "Login First",
+                        position: "topRight"
+                    })
                 }else if(response == 201){
-                    alertify.set('notifier','position', 'top-right');
-                    alertify.success("Product added to the cart");
+                    iziToast.success({
+                        title: "Success",
+                        icon: "bi bi-check2-circle",
+                        message: "Product added to the cart",
+                        position: "topRight"
+                    })
                 }else if(response == 500){
-                    alertify.set('notifier','position', 'top-right');
-                    alertify.error("Something Went Wrong");
+                    iziToast.error({
+                        title: "Error",
+                        icon: 'bi bi-x-circle',
+                        message: "Something Went Wrong",
+                        position: "topRight"
+                    })
                 }else if(response == "exists"){
-                    alertify.set('notifier','position', 'top-right');
-                    alertify.success("Product already in cart");
+                    iziToast.success({
+                        title: "Success",
+                        icon: "bi bi-check2-circle",
+                        message: "Product already in cart",
+                        position: "topRight"
+                    })
                 }
             }
         });

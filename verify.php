@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "utils.php";
 if(isset($_POST['verify-btn'])){
     if($_POST['otp-code'] == $_SESSION['otp']){
         header("Location: index.php");
@@ -8,7 +9,10 @@ if(isset($_POST['verify-btn'])){
     else{
         echo "
             <script>
-                alert('invalid otp code, please try again');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!'});
                 window.replace = 'authenticate.php';
             </script>
         ";

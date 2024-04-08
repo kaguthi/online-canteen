@@ -11,6 +11,7 @@ include "sidebar.php";
                 <div class="bg-light rounded h-100 p-4">
                     <h4 class="mb-6">Users Table</h4>
                     <div class="table-responsive">
+                    <a href="addUser.php" class="btn btn-primary mb-2"><i class="bi bi-plus-circle"></i> New User</a>
                         <table class="table table-striped table-bordered" id="user-table">
                             <thead>
                                 <tr>
@@ -39,8 +40,8 @@ include "sidebar.php";
                                             <td><?= $rows['telephone']?></td>
                                             <td><?= $rows['password']?></td>
                                             <td>
-                                                <button type="button" class="btn btn-warning edit-btn">Edit</button>
-                                                <button type="button" class="btn btn-danger">delete</button>
+                                                <button type="button" class="btn btn-warning edit-btn"><i class="bi bi-pencil-square"></i></button>
+                                                <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                             </td>
                                         </tr>
                                 <?php
@@ -98,7 +99,20 @@ include "sidebar.php";
 </body>
 <script>
     $(document).ready(function(){
-        $("#user-table").DataTable();
+        $("#user-table").DataTable({
+			buttons: [
+                {
+                    extend: 'copy',
+                    text: 'Copy current page',
+                    exportOptions:{
+                        modifier: {
+                            page: 'current'
+                        }
+                    }
+                }
+            ]
+		}
+		);
     });
 </script>
 <script>    
@@ -118,6 +132,21 @@ include "sidebar.php";
             $("#password").val(data[5]);
     });
 ;
+</script>
+<script>
+    <?php 
+    if(isset($_SESSION["success"])){
+        ?>
+        iziToast.success({
+            title: "Success",
+            icon: "bi bi-check2-circle",
+            message: "<?php echo $_SESSION['success'];?>",
+            position: "topRight"
+        });
+    <?php
+    }
+    unset($_SESSION["success"]);
+    ?>
 </script>
 <?php
 }else{

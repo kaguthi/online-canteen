@@ -93,20 +93,22 @@ else if(isset($_POST['login-btn'])){
             $_SESSION['uname'] = $rows['firstname'];
 
             // otp generation
-            $_SESSION['otp'] = rand(100000,999999);
+            //$_SESSION['otp'] = rand(100000,999999);
 
-            $otp = $_SESSION['otp'];
+            //$otp = $_SESSION['otp'];
            
             // send the otp to the user
-            $mail_status = sendOtp($_POST['email'], $otp);
-            if ($mail_status == 1){
-                header("Location: authentication.php");
-                die();
-            }else{
-                $_SESSION['message'] = "something went wrong";
-            header("Location: login.php");
+            // $mail_status = sendOtp($_POST['email'], $otp);
+            // if ($mail_status == 1){
+            //     header("Location: authentication.php");
+            //     die();
+            // }else{
+            //     $_SESSION['message'] = "something went wrong";
+            // header("Location: login.php");
+            // die();
+            // }
+            header("Location: index.php");
             die();
-            }
         }else{
             $_SESSION['message'] = "email or password invalid try again";
             header("Location: login.php");

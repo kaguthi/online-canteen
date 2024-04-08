@@ -11,6 +11,7 @@ include "sidebar.php";
                 <div class="bg-light rounded h-100 p-4">
                     <h4 class="mb-4">Food Table</h4>
                     <div class="table-responsive">
+                        <a href="addFood.php" class="btn btn-primary mb-2"><i class="bi bi-plus-circle"></i> New Food</a>
                         <table class="table" id="food-table">
                             <thead>
                                 <tr>
@@ -39,8 +40,8 @@ include "sidebar.php";
                                             <td><?= $rows['category']?></td>
                                             <td><?= $rows['description']?></td>
                                             <td>
-                                                <a href="editFood.php?id=<?= $rows['food_id']?>" class="btn btn-warning">Edit</a>
-                                                <button type="button" class="btn btn-danger delete-food-btn" name="delete-food-btn" value="<?= $rows['food_id']?>">Delete</button>
+                                                <a href="editFood.php?id=<?= $rows['food_id']?>" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                                <button type="button" class="btn btn-danger delete-food-btn" name="delete-food-btn" value="<?= $rows['food_id']?>"><i class="bi bi-trash"></i></button>
                                             </td>
                                         </tr>
                                         

@@ -11,6 +11,7 @@ include "sidebar.php";
                 <div class="bg-light rounded p-4 h-100">
                     <h4 class="mb-4">Category Table</h4>
                     <div class="table-responsive">
+                        <a href="addCategory.php" class="btn btn-primary mb-2"><i class="bi bi-plus-circle"></i> New Category</a>
                         <table class="table" id="category-table">
                             <thead>
                                 <tr>
@@ -35,8 +36,8 @@ include "sidebar.php";
                                         <td><img src="categoryImage/<?= $rows['category_image']?>" alt="category image" width="50px" height="50px" style="border: 1px solid black;"></td>
                                         <td>
                                             <!-- <button class="btn btn-warning">Edit</button> -->
-                                            <a href="editCategory.php?id=<?= $rows['category_id']?>" class="btn btn-warning">Edit</a>
-                                            <button class="btn btn-danger delete-category" value="<?= $rows['category_id']?>" name="delete-category">Delete</button>
+                                            <a href="editCategory.php?id=<?= $rows['category_id']?>" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                            <button class="btn btn-danger delete-category" value="<?= $rows['category_id']?>" name="delete-category"><i class="bi bi-trash"></i></button>
                                         </td>
                                     </tr>
                             <?php
